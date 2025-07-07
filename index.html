@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> القائمة </title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manchette&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #fffef9;
+      font-family: 'Manchette', serif;
+      color: #5e6150;
+    }
+
+    .title-font {
+      color: #3a3a2e;
+      font-size: 3.5rem;
+    }
+
+    .category-font {
+      color: #6b7662;
+      font-size: 1.25rem;
+    }
+
+    .category-tab {
+      background-color: white;
+      transition: all 0.3s ease;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .category-tab:hover {
+      background-color: #b5b895;
+      color: #3a3a2e;
+      box-shadow: 0 4px 6px rgba(107, 118, 98, 0.3);
+    }
+
+    .category-tab.active {
+      background: linear-gradient(135deg, #8f9b70 0%, #6b7662 100%);
+      color: white;
+      box-shadow: 0 4px 6px rgba(107, 118, 98, 0.7);
+    }
+
+    .menu-font {
+      color: #3a3a2e;
+    }
+
+    .menu-item h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .price {
+      color: #9ea894;
+      font-weight: bold;
+      font-size: 1.125rem;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Social icons container */
+    .social-icons {
+      gap: 12px; /* wider gap between icons */
+    }
+
+    .social-icons a img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Logo and Title + Social Icons -->
+    <div class="text-center mb-8">
+      <img src="https://i.postimg.cc/KzyLNnzN/S-logo.png" alt="شعار المقهى" class="mx-auto mb-4" style="width: 400px; height: auto;" />
+      <h1 class="text-4xl font-bold title-font"> القائمة </h1>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-center items-center mt-4 social-icons">
+        <a href="https://wa.me/966590081035" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
+          <img src="https://i.ibb.co/k294nzdt/1.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.instagram.com/sehab.ksa" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+          <img src="https://i.ibb.co/Q3GJ6MYz/2.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@sehab.ksa" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+          <img src="https://i.ibb.co/CsbtLzzQ/3.png" alt="TikTok" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <button onclick="showCategory('coffee')" class="category-tab active category-font" id="coffee-tab">
+        القهوة الساخنة
+      </button>
+      <button onclick="showCategory('pastries')" class="category-tab category-font" id="pastries-tab">
+        الحلويات
+      </button>
+      <button onclick="showCategory('beverages')" class="category-tab category-font" id="beverages-tab">
+        المشروبات الباردة
+      </button>
+    </div>
+
+    <!-- Menu Sections -->
+    <div id="menu-content" class="fade-in">
+
+      <!-- Coffee Section -->
+      <div id="coffee" class="menu-section">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>قهوة اليوم</h3><span class="price" dir="ltr">9</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>قهوة مقطرة</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>سبانش</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>فلات وايت</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ماتشا</h3><span class="price" dir="ltr">16</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>كابتشينو</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>امريكانو</h3><span class="price" dir="ltr">10</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>كورتادو</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>اسبريسو</h3><span class="price" dir="ltr">9</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-font menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>بيكولو لاتيه</h3><span class="price" dir="ltr">10</span></div></div>
+        </div>
+      </div>
+
+      <!-- Pastries Section -->
+      <div id="pastries" class="menu-section hidden">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>تراميسيو</h3><span class="price" dir="ltr">21</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>كرانشي كيك</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>مادلين تمر</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>كوكيز</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>كرات الجوز</h3><span class="price" dir="ltr">11</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>تارت بيكان</h3><span class="price" dir="ltr">6</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>تارت لوز</h3><span class="price" dir="ltr">6</span></div></div>
+        </div>
+      </div>
+
+      <!-- Beverages Section -->
+      <div id="beverages" class="menu-section hidden">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس دريب</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس سبانش</h3><span class="price" dir="ltr">16</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس كورتادو</h3><span class="price" dir="ltr">13</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس فلات وايت</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس ماتشا</h3><span class="price" dir="ltr">18</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ايس كركديه</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>الفريدو</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"><div class="flex justify-between"><h3>ماء</h3><span class="price" dir="ltr">1</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function showCategory(category) {
+      const sections = document.querySelectorAll(".menu-section");
+      sections.forEach(section => section.classList.add("hidden"));
+
+      document.getElementById(category).classList.remove("hidden");
+
+      const tabs = document.querySelectorAll(".category-tab");
+      tabs.forEach(tab => tab.classList.remove("active"));
+
+      const activeTab = document.getElementById(category + "-tab");
+      if (activeTab) activeTab.classList.add("active");
+
+      const content = document.getElementById("menu-content");
+      content.classList.remove("fade-in");
+      setTimeout(() => content.classList.add("fade-in"), 10);
+    }
+  </script>
+
+</body>
+</html>
